@@ -16,7 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"username\" : \"admin\", \n    \"password\" : \"cGX3YBCI9tsJ21Q\"\n}",
+							"raw": "{\n    \"username\" : \"username_here\", \n    \"password\" : \"password_here\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -43,7 +43,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"username\" : \"admin\", \n    \"password\" : \"cGX3YBCI9tsJ21Q\"\n}",
+									"raw": "{\n    \"username\" : \"right_username\", \n    \"password\" : \"right_password\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
