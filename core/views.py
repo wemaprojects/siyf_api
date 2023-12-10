@@ -12,14 +12,14 @@ from .serializers import FeedbackSerializer, NewsSerializer
 
 class FeedbackList(APIView):
     def get(self, request):
-        return Response(FeedbackSerializer(Feedback.objects.all(), many=True), status=200)
+        return Response(FeedbackSerializer(Feedback.objects.all(), many=True).data, status=200)
     
 class FeedbackCreateView(APIView):
     def post(self, request):
         serializer = FeedbackSerializer(data = request.data)
         if serializer.is_valid(raise_exception=True):
             feedback = Feedback.objects.create(**serializer.validated_data)
-            return Response(FeedbackSerializer(feedback), status=200)
+            return Response(FeedbackSerializer(feedback).data, status=200)
 
 class FeedbackView(APIView):
     def get(self, request, id):
@@ -27,7 +27,7 @@ class FeedbackView(APIView):
             feedback = Feedback.objects.get(id=id)
         except:
             return Response({"error" : f"Feedback with id {id} not found"}, status=404)
-        return Response(FeedbackSerializer(), status=200)
+        return Response(FeedbackSerializer(feedback).data, status=200)
     
     def delete(self, request : HttpRequest, id):
             if bool(request.user and request.user.is_authenticated):
