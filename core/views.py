@@ -48,15 +48,15 @@ class HeaderNewsDeleteView(APIView):
     permission_classes = [IsAuthenticated]
     def delete(self ,reqeust, id):
         try: news = HeaderNews.objects.get(id=id)
-        except : return Response({"error" : f"News with id {id} not found"}, 404) 
-        
-        return Response(NewsSerializer(news).data, 200)
+        except : return Response({"error" : f"HeaderNews with id {id} not found"}, 404) 
+        news.delete()
+        return Response({}, 200)
 
 class HeaderNewsListView(APIView):
     def get(self, request):
         return Response(NewsSerializer(HeaderNews.objects.all(), many=True).data, 200)
 
-class HeaderNewsEditView(APIView):
+class HeaderNewsCreateView(APIView):
     permission_classes = [IsAuthenticated]
     def post(self, request):
         serializer = NewsSerializer(data=request.data)
@@ -65,11 +65,7 @@ class HeaderNewsEditView(APIView):
             news = HeaderNews.objects.create(**valdata)
             return Response({}, status=200)
 
-    def delete(self ,reqeust, id):
-        try: news = HeaderNews.objects.get(id=id)
-        except : return Response({"error" : f"HeaderNews with id {id} not found"}, 404) 
-        news.delete()
-        return Response({}, 200)
+    
     
 
 
@@ -80,14 +76,15 @@ class NewsDeleteView(APIView):
     def delete(self ,reqeust, id):
         try: news = News.objects.get(id=id)
         except : return Response({"error" : f"News with id {id} not found"}, 404) 
-        
-        return Response(NewsSerializer(news).data, 200)
+        news.delete()
+        return Response({}, 200)
+    
 
 class NewsListView(APIView):
     def get(self, request):
         return Response(NewsSerializer(News.objects.all(), many=True).data, 200)
 
-class NewsEditView(APIView):
+class NewsCreateView(APIView):
     permission_classes = [IsAuthenticated]
     def post(self, request):
         serializer = NewsSerializer(data=request.data)
@@ -95,11 +92,4 @@ class NewsEditView(APIView):
             valdata = serializer.validated_data
             news = News.objects.create(**valdata)
             return Response({}, status=200)
-
-    def delete(self ,reqeust, id):
-        try: news = News.objects.get(id=id)
-        except : return Response({"error" : f"News with id {id} not found"}, 404) 
-        news.delete()
-        return Response({}, 200)
-    
-
+        
