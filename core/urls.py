@@ -13,12 +13,12 @@ urlpatterns = [
 
     path('header_news/list/', HeaderNewsListView.as_view()), 
     path('header_news/create/', HeaderNewsEditView.as_view()),
-    path('header_news/delete/<int:id>/', HeaderNewsEditView.as_view() ),
-    path('header_news/detailed/<int:id>/', HeaderNewsDetailView.as_view() ),
+    path('header_news/delete/<str:id>/', HeaderNewsEditView.as_view() ),
+    path('header_news/detailed/<str:id>/', HeaderNewsDetailView.as_view() ),
 
     path('news/list/', NewsListView.as_view()), 
     path('news/create/', NewsEditView.as_view()),
-    path('news/delete/<int:id>/', NewsEditView.as_view() ),
-    path('news/detailed/<int:id>/', NewsDetailView.as_view() ),
+    path('news/delete/<str:id>/', NewsEditView.as_view() ),
+    path('news/detailed/<str:id>/', NewsDetailView.as_view() ),
 
 ]
