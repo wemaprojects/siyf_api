@@ -45,6 +45,7 @@ class FeedbackView(APIView):
 
 
 class HeaderNewsDeleteView(APIView):
+    permission_classes = [IsAuthenticated]
     def delete(self ,reqeust, id):
         try: news = HeaderNews.objects.get(id=id)
         except : return Response({"error" : f"News with id {id} not found"}, 404) 
@@ -75,6 +76,7 @@ class HeaderNewsEditView(APIView):
 
 
 class NewsDeleteView(APIView):
+    permission_classes = [IsAuthenticated]
     def delete(self ,reqeust, id):
         try: news = News.objects.get(id=id)
         except : return Response({"error" : f"News with id {id} not found"}, 404) 
