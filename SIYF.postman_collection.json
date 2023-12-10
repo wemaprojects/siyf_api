@@ -1,0 +1,2364 @@
+{
+	"info": {
+		"_postman_id": "cf8c6c5a-809d-4c50-806b-b5b87a27dedb",
+		"name": "SIYF",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29804236"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Authorization",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\" : \"admin\", \n    \"password\" : \"cGX3YBCI9tsJ21Q\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/users/login/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"login",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\" : \"admin\", \n    \"password\" : \"cGX3YBCI9tsJ21Q\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/users/login/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"users",
+										"login",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 10 Dec 2023 16:47:32 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "52"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "X-Clacks-Overhead",
+									"value": "GNU Terry Pratchett"
+								},
+								{
+									"key": "Server",
+									"value": "PythonAnywhere"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token\": \"a115d5a386fc7e74c7f7174053866f0e11d14b12\"\n}"
+						},
+						{
+							"name": "Wrong Inputs or Data Format",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<myTag>\n    WATTTAFAAK\n</myTag>",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/users/login/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"users",
+										"login",
+										""
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 10 Dec 2023 16:48:01 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "79"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Server",
+									"value": "PythonAnywhere"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"username\": [\n        \"This field is required.\"\n    ],\n    \"password\": [\n        \"This field is required.\"\n    ]\n}"
+						},
+						{
+							"name": "Wrong credentials",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\" : \"wrong_username\", \n    \"password\" : \"wrong_password\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/users/login/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"users",
+										"login",
+										""
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 10 Dec 2023 16:49:51 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "68"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Server",
+									"value": "PythonAnywhere"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"non_field_errors\": [\n        \"Unable to log in with provided credentials.\"\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Feedback",
+			"item": [
+				{
+					"name": "FeedbackList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/core/feedback/list/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"core",
+								"feedback",
+								"list",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "sample data",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/core/feedback/list/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"core",
+										"feedback",
+										"list",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 10 Dec 2023 16:59:23 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "X-Clacks-Overhead",
+									"value": "GNU Terry Pratchett"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Server",
+									"value": "PythonAnywhere"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"1\",\n        \"email\": \"wemakoz@gmail.com\",\n        \"text\": \"Похуй )\",\n        \"date\": \"2023-12-10T16:56:57.135482Z\",\n        \"ip\": \"\"\n    },\n    {\n        \"id\": \"3\",\n        \"email\": \"wemakoz@gmail.com\",\n        \"text\": \"Похуй )\",\n        \"date\": \"2023-12-10T16:57:19.714771Z\",\n        \"ip\": \"\"\n    },\n    {\n        \"id\": \"4\",\n        \"email\": \"wemakoz@gmail.com\",\n        \"text\": \"Похуй )\",\n        \"date\": \"2023-12-10T16:57:20.826098Z\",\n        \"ip\": \"\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Feedback Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\" : \"wemakoz@gmail.com\",\n    \"text\" : \"Похуй )\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/core/feedback/create/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"core",
+								"feedback",
+								"create",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Incorrect data",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\" : \"wemakoz@gmail.com\"\n  \n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/core/feedback/create/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"core",
+										"feedback",
+										"create",
+										""
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 10 Dec 2023 18:25:10 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "36"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Server",
+									"value": "PythonAnywhere"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"text\": [\n        \"This field is required.\"\n    ]\n}"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\" : \"wemakoz@gmail.com\",\n    \"text\" : \"Похуй )\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/core/feedback/create/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"core",
+										"feedback",
+										"create",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 10 Dec 2023 18:25:33 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "105"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "X-Clacks-Overhead",
+									"value": "GNU Terry Pratchett"
+								},
+								{
+									"key": "Server",
+									"value": "PythonAnywhere"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"5\",\n    \"email\": \"wemakoz@gmail.com\",\n    \"text\": \"Похуй )\",\n    \"date\": \"2023-12-10T18:25:33.373339Z\",\n    \"ip\": \"\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Feedback Details",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\" : \"wemakoz@gmail.com\",\n    \"text\" : \"Похуй )\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/core/feedback/2/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"core",
+								"feedback",
+								"2",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Sample data",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\" : \"wemakoz@gmail.com\",\n    \"text\" : \"Похуй )\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/core/feedback/2/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"core",
+										"feedback",
+										"2",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 10 Dec 2023 16:58:27 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "105"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "X-Clacks-Overhead",
+									"value": "GNU Terry Pratchett"
+								},
+								{
+									"key": "Server",
+									"value": "PythonAnywhere"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"2\",\n    \"email\": \"wemakoz@gmail.com\",\n    \"text\": \"Похуй )\",\n    \"date\": \"2023-12-10T16:57:18.468384Z\",\n    \"ip\": \"\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Feedback Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\" : \"wemakoz@gmail.com\",\n    \"text\" : \"Похуй )\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/core/feedback/2/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"core",
+								"feedback",
+								"2",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\" : \"wemakoz@gmail.com\",\n    \"text\" : \"Похуй )\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/core/feedback/2/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"core",
+										"feedback",
+										"2",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 10 Dec 2023 16:59:19 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "20"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "X-Clacks-Overhead",
+									"value": "GNU Terry Pratchett"
+								},
+								{
+									"key": "Server",
+									"value": "PythonAnywhere"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"Removed\"\n}"
+						},
+						{
+							"name": "No Auth Case",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token {{token}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\" : \"wemakoz@gmail.com\",\n    \"text\" : \"Похуй )\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/core/feedback/2/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"core",
+										"feedback",
+										"2",
+										""
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 10 Dec 2023 16:59:45 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "34"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Server",
+									"value": "PythonAnywhere"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"only manager operation\"\n}"
+						},
+						{
+							"name": "Wrong ID Case",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\" : \"wemakoz@gmail.com\",\n    \"text\" : \"Похуй )\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/core/feedback/2/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"core",
+										"feedback",
+										"2",
+										""
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 10 Dec 2023 17:00:13 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "40"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Server",
+									"value": "PythonAnywhere"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Feedback with id 2 not found\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "HeaderNews",
+			"item": [
+				{
+					"name": "Create HeaderNews",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "text",
+									"value": "Just Header",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/wemakoz/Pictures/wallhaven-6o9936.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/core/header_news/create/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"core",
+								"header_news",
+								"create",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "No Auth request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "text",
+											"value": "Just Header",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/home/wemakoz/Pictures/wallhaven-6o9936.jpg"
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "javascript"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/core/header_news/create/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"core",
+										"header_news",
+										"create",
+										""
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 10 Dec 2023 18:20:07 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "58"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "WWW-Authenticate",
+									"value": "Token"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, DELETE, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Server",
+									"value": "PythonAnywhere"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"detail\": \"Authentication credentials were not provided.\"\n}"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "text",
+											"value": "Just Header",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/home/wemakoz/Pictures/wallhaven-6o9936.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/core/header_news/create/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"core",
+										"header_news",
+										"create",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 10 Dec 2023 18:21:09 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, DELETE, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "X-Clacks-Overhead",
+									"value": "GNU Terry Pratchett"
+								},
+								{
+									"key": "Server",
+									"value": "PythonAnywhere"
+								}
+							],
+							"cookie": [],
+							"body": "{}"
+						},
+						{
+							"name": "Incorrect Data/ no image/ no text/ wrong json",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "text",
+											"value": "Just Header",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/home/wemakoz/Pictures/wallhaven-6o9936.jpg",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/core/header_news/create/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"core",
+										"header_news",
+										"create",
+										""
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 10 Dec 2023 18:21:38 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "36"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, DELETE, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Server",
+									"value": "PythonAnywhere"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"image\": [\n        \"No file was submitted.\"\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "HeaderNews LIst",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/core/header_news/list",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"core",
+								"header_news",
+								"list"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Sample data",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/core/header_news/list",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"core",
+										"header_news",
+										"list"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 10 Dec 2023 18:23:46 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "211"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "X-Clacks-Overhead",
+									"value": "GNU Terry Pratchett"
+								},
+								{
+									"key": "Server",
+									"value": "PythonAnywhere"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"ba745a91efce46068011c6c531001cbb\",\n        \"image\": \"/media/wallhaven-6o9936.jpg\",\n        \"text\": \"Just Header\"\n    },\n    {\n        \"id\": \"7c63574d6e3c4b508023a430052c9942\",\n        \"image\": \"/media/wallhaven-6o9936_LejayCC.jpg\",\n        \"text\": \"Just Header\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "HeaderNews Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/core/header_news/delete/7c63574d6e3c4b508023a430052c9942/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"core",
+								"header_news",
+								"delete",
+								"7c63574d6e3c4b508023a430052c9942",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "No Auth",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/core/header_news/delete/7c63574d6e3c4b508023a430052c9942/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"core",
+										"header_news",
+										"delete",
+										"7c63574d6e3c4b508023a430052c9942",
+										""
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 10 Dec 2023 18:35:51 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "58"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "WWW-Authenticate",
+									"value": "Token"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "DELETE, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Server",
+									"value": "PythonAnywhere"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"detail\": \"Authentication credentials were not provided.\"\n}"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token {{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/core/header_news/delete/7c63574d6e3c4b508023a430052c9942/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"core",
+										"header_news",
+										"delete",
+										"7c63574d6e3c4b508023a430052c9942",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 10 Dec 2023 18:39:33 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "DELETE, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "X-Clacks-Overhead",
+									"value": "GNU Terry Pratchett"
+								},
+								{
+									"key": "Server",
+									"value": "PythonAnywhere"
+								}
+							],
+							"cookie": [],
+							"body": "{}"
+						},
+						{
+							"name": "Wrong ID",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token {{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/core/header_news/delete/7c63574d6e3c4b508023a430052c9942/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"core",
+										"header_news",
+										"delete",
+										"7c63574d6e3c4b508023a430052c9942",
+										""
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 10 Dec 2023 18:39:51 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "73"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "DELETE, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Server",
+									"value": "PythonAnywhere"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"HeaderNews with id 7c63574d6e3c4b508023a430052c9942 not found\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "News",
+			"item": [
+				{
+					"name": "Create News",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "text",
+									"value": "Just News Object",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/wemakoz/Pictures/wallhaven-6o9936.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/core/news/create/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"core",
+								"news",
+								"create",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "No Auth request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "text",
+											"value": "Just Header",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/home/wemakoz/Pictures/wallhaven-6o9936.jpg"
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "javascript"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/core/news/create/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"core",
+										"news",
+										"create",
+										""
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 10 Dec 2023 18:20:07 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "58"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "WWW-Authenticate",
+									"value": "Token"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, DELETE, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Server",
+									"value": "PythonAnywhere"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"detail\": \"Authentication credentials were not provided.\"\n}"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "text",
+											"value": "Just Header",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/home/wemakoz/Pictures/wallhaven-6o9936.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/core/news/create/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"core",
+										"news",
+										"create",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 10 Dec 2023 18:21:09 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, DELETE, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "X-Clacks-Overhead",
+									"value": "GNU Terry Pratchett"
+								},
+								{
+									"key": "Server",
+									"value": "PythonAnywhere"
+								}
+							],
+							"cookie": [],
+							"body": "{}"
+						},
+						{
+							"name": "Incorrect Data/ no image/ no text/ wrong json",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "text",
+											"value": "Just Header",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/home/wemakoz/Pictures/wallhaven-6o9936.jpg",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/core/news/create/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"core",
+										"news",
+										"create",
+										""
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 10 Dec 2023 18:21:38 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "36"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, DELETE, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Server",
+									"value": "PythonAnywhere"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"image\": [\n        \"No file was submitted.\"\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "News LIst",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/core/news/list",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"core",
+								"news",
+								"list"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "sample data",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/core/news/list",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"core",
+										"news",
+										"list"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 10 Dec 2023 18:42:40 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "X-Clacks-Overhead",
+									"value": "GNU Terry Pratchett"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Server",
+									"value": "PythonAnywhere"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"80e3a4ee8d454310bb4345deaa61e0b7\",\n        \"image\": \"/media/wallhaven-yxkmjx.png\",\n        \"text\": \"Just News Object\"\n    },\n    {\n        \"id\": \"dbae6e87e4ed4825b96bba3c18af5fe9\",\n        \"image\": \"/media/wallhaven-yxkmjx_2kIvRIP.png\",\n        \"text\": \"Just News Object\"\n    },\n    {\n        \"id\": \"b4cecc12858244d0b372dd5dfd91b389\",\n        \"image\": \"/media/wallhaven-yxkmjx_WtJHhcS.png\",\n        \"text\": \"Just News Object\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "News Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/core/news/delete/b4cecc12858244d0b372dd5dfd91b389/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"core",
+								"news",
+								"delete",
+								"b4cecc12858244d0b372dd5dfd91b389",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "No Auth",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/core/news/delete/7c63574d6e3c4b508023a430052c9942/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"core",
+										"news",
+										"delete",
+										"7c63574d6e3c4b508023a430052c9942",
+										""
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 10 Dec 2023 18:35:51 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "58"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "WWW-Authenticate",
+									"value": "Token"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "DELETE, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Server",
+									"value": "PythonAnywhere"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"detail\": \"Authentication credentials were not provided.\"\n}"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token {{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/core/news/delete/b4cecc12858244d0b372dd5dfd91b389/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"core",
+										"news",
+										"delete",
+										"b4cecc12858244d0b372dd5dfd91b389",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 10 Dec 2023 18:39:33 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "DELETE, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "X-Clacks-Overhead",
+									"value": "GNU Terry Pratchett"
+								},
+								{
+									"key": "Server",
+									"value": "PythonAnywhere"
+								}
+							],
+							"cookie": [],
+							"body": "{}"
+						},
+						{
+							"name": "Wrong ID",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token {{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/core/news/delete/7c63574d6e3c4b508023a430052c9942/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"core",
+										"news",
+										"delete",
+										"7c63574d6e3c4b508023a430052c9942",
+										""
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 10 Dec 2023 18:44:36 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "67"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "DELETE, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Server",
+									"value": "PythonAnywhere"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"News with id 7c63574d6e3c4b508023a430052c9942 not found\"\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "siyfproject.pythonanywhere.com"
+		},
+		{
+			"key": "token",
+			"value": "a115d5a386fc7e74c7f7174053866f0e11d14b12"
+		}
+	]
+}
